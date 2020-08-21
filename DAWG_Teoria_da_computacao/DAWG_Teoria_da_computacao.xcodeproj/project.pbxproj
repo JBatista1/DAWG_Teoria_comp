@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87195F1F80A2A0A3A14997B5 /* Pods_DAWG_Teoria_da_computacao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */; };
 		9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F324EFD3C200640D11 /* DFA.swift */; };
 		9AC8C1F724EFD3C300640D11 /* IOUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */; };
 		9AC8C1F924EFD3E100640D11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F824EFD3E100640D11 /* main.swift */; };
@@ -25,6 +26,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3E73169B35F5764678E7920F /* Pods-DAWG_Teoria_da_computacao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAWG_Teoria_da_computacao.release.xcconfig"; path = "Target Support Files/Pods-DAWG_Teoria_da_computacao/Pods-DAWG_Teoria_da_computacao.release.xcconfig"; sourceTree = "<group>"; };
+		46F4E9C5288F5A4B97344DAB /* Pods-DAWG_Teoria_da_computacao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAWG_Teoria_da_computacao.debug.xcconfig"; path = "Target Support Files/Pods-DAWG_Teoria_da_computacao/Pods-DAWG_Teoria_da_computacao.debug.xcconfig"; sourceTree = "<group>"; };
+		678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DAWG_Teoria_da_computacao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8C1E824EFD39D00640D11 /* DAWG_Teoria_da_computacao */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DAWG_Teoria_da_computacao; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8C1F324EFD3C200640D11 /* DFA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
 		9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUtilities.swift; sourceTree = "<group>"; };
@@ -36,17 +40,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87195F1F80A2A0A3A14997B5 /* Pods_DAWG_Teoria_da_computacao.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BD7FCE5B129F6942C892CF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9AC8C1DF24EFD39D00640D11 = {
 			isa = PBXGroup;
 			children = (
 				9AC8C1EA24EFD39D00640D11 /* DAWG_Teoria_da_computacao */,
 				9AC8C1E924EFD39D00640D11 /* Products */,
+				C67D4612CF82AA54DDB8181F /* Pods */,
+				7BD7FCE5B129F6942C892CF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,6 +99,15 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		C67D4612CF82AA54DDB8181F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46F4E9C5288F5A4B97344DAB /* Pods-DAWG_Teoria_da_computacao.debug.xcconfig */,
+				3E73169B35F5764678E7920F /* Pods-DAWG_Teoria_da_computacao.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -91,9 +115,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AC8C1EF24EFD39D00640D11 /* Build configuration list for PBXNativeTarget "DAWG_Teoria_da_computacao" */;
 			buildPhases = (
+				26D519605A6894B9F7C8043F /* [CP] Check Pods Manifest.lock */,
 				9AC8C1E424EFD39D00640D11 /* Sources */,
 				9AC8C1E524EFD39D00640D11 /* Frameworks */,
 				9AC8C1E624EFD39D00640D11 /* CopyFiles */,
+				9AD0290E24EFDA0400A1CCE1 /* Swift Lint */,
 			);
 			buildRules = (
 			);
@@ -136,6 +162,49 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26D519605A6894B9F7C8043F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DAWG_Teoria_da_computacao-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AD0290E24EFDA0400A1CCE1 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9AC8C1E424EFD39D00640D11 /* Sources */ = {
@@ -266,6 +335,7 @@
 		};
 		9AC8C1F024EFD39D00640D11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46F4E9C5288F5A4B97344DAB /* Pods-DAWG_Teoria_da_computacao.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XYJN7S9JQ;
@@ -277,6 +347,7 @@
 		};
 		9AC8C1F124EFD39D00640D11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E73169B35F5764678E7920F /* Pods-DAWG_Teoria_da_computacao.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XYJN7S9JQ;

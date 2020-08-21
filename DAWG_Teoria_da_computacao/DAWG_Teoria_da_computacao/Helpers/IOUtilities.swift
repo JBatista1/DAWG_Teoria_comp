@@ -20,5 +20,4 @@ class IOUtilities {
     static func output(theText text: String) {
         print(text)
     }
-    
 }

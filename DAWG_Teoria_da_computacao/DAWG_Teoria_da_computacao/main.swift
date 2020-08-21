@@ -13,4 +13,5 @@ let response = IOUtilities.inputKeyboard()
 let dfa = DFA(name: response)
 dfa.printName()
 print("teste")
+
 //}
