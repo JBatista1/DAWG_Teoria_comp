@@ -7,12 +7,15 @@
 //
 
 import Foundation
+
+typealias StateValue = [Character: [State]]
+
 class State {
     var isInitial: Bool!
-    var valueState: [Character: State]?
+    var valueState: StateValue?
     var isFinish: Bool!
     var name: String!
-    func setupConfig(isFinish: Bool, isInitial: Bool, valueState: [Character: State]? , andName name: String) {
+    func setupConfig(isFinish: Bool, isInitial: Bool, valueState: StateValue?, andName name: String) {
         self.isFinish = isFinish
         self.valueState = valueState
         self.isInitial = isInitial

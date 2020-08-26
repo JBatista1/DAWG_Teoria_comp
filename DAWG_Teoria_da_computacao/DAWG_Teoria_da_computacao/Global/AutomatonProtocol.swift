@@ -6,10 +6,17 @@
 //  Copyright © 2020 Joao Batista. All rights reserved.
 //
 
+
+
 protocol AutomatonProtocol {
+    var alphabet: Set<Character?> {get set}
+    var states: Set<State> {get set}
+    var initialState: State! {get set}
+    var finalState: [State]! {get set}
     func getInitialState(inStates states: Set<State>) -> State?
     func getFinalState(inStates states: Set<State>) -> [State]?
-    func transition(withState state: State, andString string: String) -> [String: State]?
+    func transition(withState state: State, andString string: String)
+    init(alphabet: Set<Character?>, states: Set<State>)
 }
 extension AutomatonProtocol {
     func getInitialState(inStates states: Set<State>) -> State? {
@@ -27,5 +34,16 @@ extension AutomatonProtocol {
         } else {
             return finalState
         }
+    }
+    func getSymbol(theString string: String) -> Character? {
+        guard let symbol = string.first else {
+            print("Erro no programa. Simbolo não está de acordo com o Alfabeto")
+            return nil
+        }
+        if !alphabet.contains(symbol)  {
+            print("Erro no programa. Simbolo não está de acordo com o Alfabeto")
+            return nil
+        }
+        return symbol
     }
 }
