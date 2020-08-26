@@ -10,44 +10,42 @@ import Foundation
 
 class DFA: AutomatonProtocol {
     //Variaveis globais Necessarias para o automato
-    private let alphabet: Set<Character>
-    private let states: Set<State>
-    private var initialState: State!
-    private var finalState: [State]!
+    var alphabet: Set<Character?>
+    var states: Set<State>
+    var initialState: State!
+    var finalState: [State]!
+    var isAccepted: Bool = false
 
-    init(alphabet: Set<Character>, states: Set<State>) {
+    required init(alphabet: Set<Character?>, states: Set<State>) {
         self.alphabet = alphabet
         self.states = states
         setupInitialAndFinalState(withStates: states)
     }
-
     func valid(theString string: String) -> Bool {
-        if transition(withState: initialState, andString: string) != nil {
+        transition(withState: initialState, andString: string)
+        if isAccepted {
             return true
+        }else {
+            return false
         }
-        return false
     }
 
-    func transition(withState state: State, andString string: String) -> [String: State]? {
-        var result: [String: State]? = [:]
+    func transition(withState state: State, andString string: String) {
         if string.count == 0 {
             if state.isFinish == true {
-                print("String Aceita")
-                return result
+                isAccepted = true
             } else {
-                print("String não aceita")
-                return result
+                isAccepted = false
             }
         } else {
             let substring = String(string.dropFirst())
-            guard let symbol = string.first, let nextState = state.valueState?[symbol]  else {
-                 print("Erro no programa. Simbolo não está de acordo com o Alfabeto")
-                return nil
+            guard let symbol = string.first, let nextState = state.valueState?[symbol]?.first else {
+                print("Erro no programa. Simbolo não está de acordo com o Alfabeto")
+                return
             }
-            print("Meu simbolo é \(symbol) e vou para \(nextState.name!)")
-            result = transition(withState: nextState, andString: substring)
+            print("O simbolo é \(symbol) e vai para o estado \(nextState.name!)")
+            transition(withState: nextState, andString: substring)
         }
-        return result
     }
 
     private func setupInitialAndFinalState(withStates states: Set<State> ) {
