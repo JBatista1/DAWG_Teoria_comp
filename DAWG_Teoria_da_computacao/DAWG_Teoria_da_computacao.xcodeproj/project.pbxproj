@@ -10,6 +10,9 @@
 		87195F1F80A2A0A3A14997B5 /* Pods_DAWG_Teoria_da_computacao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */; };
 		9A503D1D24F48E63006F8E0B /* AutomatonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */; };
 		9A97A51524F4854C005630D3 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97A51424F4854C005630D3 /* State.swift */; };
+		9AA53ED924F6ADBE00C5D941 /* Exemples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53ED824F6ADBE00C5D941 /* Exemples.swift */; };
+		9AA53EDC24F6B2A100C5D941 /* CharExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */; };
+		9AA865A924F5B28400885A2D /* NFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA865A824F5B28400885A2D /* NFA.swift */; };
 		9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F324EFD3C200640D11 /* DFA.swift */; };
 		9AC8C1F724EFD3C300640D11 /* IOUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */; };
 		9AC8C1F924EFD3E100640D11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F824EFD3E100640D11 /* main.swift */; };
@@ -33,6 +36,9 @@
 		678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DAWG_Teoria_da_computacao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonProtocol.swift; sourceTree = "<group>"; };
 		9A97A51424F4854C005630D3 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		9AA53ED824F6ADBE00C5D941 /* Exemples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemples.swift; sourceTree = "<group>"; };
+		9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharExtension.swift; sourceTree = "<group>"; };
+		9AA865A824F5B28400885A2D /* NFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFA.swift; sourceTree = "<group>"; };
 		9AC8C1E824EFD39D00640D11 /* DAWG_Teoria_da_computacao */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DAWG_Teoria_da_computacao; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8C1F324EFD3C200640D11 /* DFA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
 		9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUtilities.swift; sourceTree = "<group>"; };
@@ -64,8 +70,17 @@
 			children = (
 				9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */,
 				9A97A51424F4854C005630D3 /* State.swift */,
+				9AA53ED824F6ADBE00C5D941 /* Exemples.swift */,
 			);
 			path = Global;
+			sourceTree = "<group>";
+		};
+		9AA53EDA24F6B29500C5D941 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		9AC8C1DF24EFD39D00640D11 = {
@@ -101,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				9AC8C1F324EFD3C200640D11 /* DFA.swift */,
+				9AA865A824F5B28400885A2D /* NFA.swift */,
 			);
 			path = Authomato;
 			sourceTree = "<group>";
@@ -108,6 +124,7 @@
 		9AC8C1F424EFD3C300640D11 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9AA53EDA24F6B29500C5D941 /* Extension */,
 				9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */,
 			);
 			path = Helpers;
@@ -216,7 +233,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -226,10 +243,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AC8C1F724EFD3C300640D11 /* IOUtilities.swift in Sources */,
+				9AA53EDC24F6B2A100C5D941 /* CharExtension.swift in Sources */,
 				9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */,
 				9A503D1D24F48E63006F8E0B /* AutomatonProtocol.swift in Sources */,
+				9AA53ED924F6ADBE00C5D941 /* Exemples.swift in Sources */,
 				9A97A51524F4854C005630D3 /* State.swift in Sources */,
 				9AC8C1F924EFD3E100640D11 /* main.swift in Sources */,
+				9AA865A924F5B28400885A2D /* NFA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
