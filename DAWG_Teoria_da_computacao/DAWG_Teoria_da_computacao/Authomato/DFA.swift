@@ -9,6 +9,7 @@
 import Foundation
 
 class DFA: AutomatonProtocol {
+
     //Variaveis globais Necessarias para o automato
     var alphabet: Set<Character?>
     var states: Set<State>
@@ -21,6 +22,7 @@ class DFA: AutomatonProtocol {
         self.states = states
         setupInitialAndFinalState(withStates: states)
     }
+    
     func valid(theString string: String) -> Bool {
         transition(withState: initialState, andString: string)
         if isAccepted {

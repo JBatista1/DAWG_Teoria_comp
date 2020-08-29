@@ -102,4 +102,33 @@ class Exemples {
             print("#####################################\n")
         }
     }
+    static func convert() {
+        let q0 = State()
+        let q1 = State()
+        let q2 = State()
+        var test: Set<[State]> = []
+        let teste = [q0,q1]
+        let teste2 = [q1,q0]
+
+        q0.setupConfig(isFinish: false, isInitial: true, valueState:  ["1": [q0,q1], "0": [q0]], andName: "q0")
+        q1.setupConfig(isFinish: false, isInitial: false, valueState: ["1": [q2], "0": [q2]], andName: "q1")
+        q2.setupConfig(isFinish: true, isInitial: false, valueState: ["1": [], "0": []], andName: "q2")
+        let alphabet: Set<Character?> = ["1", "0"]
+        let states: Set<State> = [q0, q1, q2]
+        let authomato = NFA(alphabet: alphabet, states: states)
+
+        let conversion = Convert(nfa: authomato)
+        let authomatoDFA = conversion.createDFA()
+        let string = "000100"
+        if authomatoDFA.valid(theString: string) {
+            print("########### - Resultado - ########### ")
+            print("A sua String \(string) é aceita pelo automato")
+            print("#####################################")
+        } else {
+            print("########### - Resultado - ########### ")
+            print("A sua String \(string) não é aceita pelo automato")
+            print("#####################################\n")
+        }
+//        conversion.getBaseStates()
+    }
 }

@@ -12,7 +12,7 @@ class NFA: AutomatonProtocol {
 
     var alphabet: Set<Character?> = []
 
-    var states: Set<State> = []
+    var states: Set<State>
 
     var initialState: State!
 
@@ -36,7 +36,6 @@ class NFA: AutomatonProtocol {
             recursiveTransitions(state: state, andSubstring: string, withSymbol: Character.epsilon)
             if state.isFinish {
                 unionResults(isFinishResult: true)
-
             }
         }else {
             let substring = String(string.dropFirst())

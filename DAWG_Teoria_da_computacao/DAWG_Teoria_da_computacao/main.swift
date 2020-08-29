@@ -8,6 +8,12 @@
 
 import Foundation
 
-Exemples.DFATest(withString: "abbabbababa")
-Exemples.NFATestWithEpsilon(withString: "01011111")
-Exemples.NFATest(withString: "bbaaaa")
+//Exemples.DFATest(withString: "abbabbababa")
+////Não aceito
+//Exemples.NFATestWithEpsilon(withString: "101111111")
+//// Aceito
+//Exemples.NFATestWithEpsilon(withString: "001111111")
+//
+//Exemples.NFATest(withString: "bbaaa")
+
+Exemples.convert()
