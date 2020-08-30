@@ -11,12 +11,12 @@
 		9A503D1D24F48E63006F8E0B /* AutomatonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */; };
 		9A8A15EF24FAB4840083F7D5 /* StateTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A15EE24FAB4840083F7D5 /* StateTemp.swift */; };
 		9A8A15F124FAD3340083F7D5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A15F024FAD3340083F7D5 /* ArrayExtension.swift */; };
+		9A8A15F324FAEC710083F7D5 /* DAWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A15F224FAEC710083F7D5 /* DAWG.swift */; };
 		9A8BABC024F9A60E0060C44C /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8BABBF24F9A60E0060C44C /* Convert.swift */; };
 		9A97A51524F4854C005630D3 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A97A51424F4854C005630D3 /* State.swift */; };
 		9AA53ED924F6ADBE00C5D941 /* Exemples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53ED824F6ADBE00C5D941 /* Exemples.swift */; };
 		9AA53EDC24F6B2A100C5D941 /* CharExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */; };
 		9AA865A924F5B28400885A2D /* NFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA865A824F5B28400885A2D /* NFA.swift */; };
-		9AB7598624F85C8600BA0713 /* ConvertNFAToDFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB7598524F85C8600BA0713 /* ConvertNFAToDFA.swift */; };
 		9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F324EFD3C200640D11 /* DFA.swift */; };
 		9AC8C1F724EFD3C300640D11 /* IOUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */; };
 		9AC8C1F924EFD3E100640D11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F824EFD3E100640D11 /* main.swift */; };
@@ -41,12 +41,12 @@
 		9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonProtocol.swift; sourceTree = "<group>"; };
 		9A8A15EE24FAB4840083F7D5 /* StateTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTemp.swift; sourceTree = "<group>"; };
 		9A8A15F024FAD3340083F7D5 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		9A8A15F224FAEC710083F7D5 /* DAWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAWG.swift; sourceTree = "<group>"; };
 		9A8BABBF24F9A60E0060C44C /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		9A97A51424F4854C005630D3 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		9AA53ED824F6ADBE00C5D941 /* Exemples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemples.swift; sourceTree = "<group>"; };
 		9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharExtension.swift; sourceTree = "<group>"; };
 		9AA865A824F5B28400885A2D /* NFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFA.swift; sourceTree = "<group>"; };
-		9AB7598524F85C8600BA0713 /* ConvertNFAToDFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertNFAToDFA.swift; sourceTree = "<group>"; };
 		9AC8C1E824EFD39D00640D11 /* DAWG_Teoria_da_computacao */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DAWG_Teoria_da_computacao; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8C1F324EFD3C200640D11 /* DFA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
 		9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUtilities.swift; sourceTree = "<group>"; };
@@ -127,8 +127,8 @@
 			children = (
 				9AC8C1F324EFD3C200640D11 /* DFA.swift */,
 				9AA865A824F5B28400885A2D /* NFA.swift */,
-				9AB7598524F85C8600BA0713 /* ConvertNFAToDFA.swift */,
 				9A8BABBF24F9A60E0060C44C /* Convert.swift */,
+				9A8A15F224FAEC710083F7D5 /* DAWG.swift */,
 			);
 			path = Authomato;
 			sourceTree = "<group>";
@@ -256,11 +256,11 @@
 			files = (
 				9A8A15EF24FAB4840083F7D5 /* StateTemp.swift in Sources */,
 				9AC8C1F724EFD3C300640D11 /* IOUtilities.swift in Sources */,
+				9A8A15F324FAEC710083F7D5 /* DAWG.swift in Sources */,
 				9A8BABC024F9A60E0060C44C /* Convert.swift in Sources */,
 				9A8A15F124FAD3340083F7D5 /* ArrayExtension.swift in Sources */,
 				9AA53EDC24F6B2A100C5D941 /* CharExtension.swift in Sources */,
 				9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */,
-				9AB7598624F85C8600BA0713 /* ConvertNFAToDFA.swift in Sources */,
 				9A503D1D24F48E63006F8E0B /* AutomatonProtocol.swift in Sources */,
 				9AA53ED924F6ADBE00C5D941 /* Exemples.swift in Sources */,
 				9A97A51524F4854C005630D3 /* State.swift in Sources */,

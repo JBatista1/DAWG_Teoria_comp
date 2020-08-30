@@ -27,6 +27,6 @@ extension State: Hashable {
         hasher.combine(ObjectIdentifier(self).hashValue)
     }
     static func == (lhs: State, rhs: State) -> Bool {
-        return lhs.isInitial == rhs.isInitial && lhs.valueState == rhs.valueState && lhs.isFinish == rhs.isFinish && lhs.name == rhs.name
+        return lhs.isInitial == rhs.isInitial && lhs.isFinish == rhs.isFinish && lhs.name == rhs.name
     }
 }

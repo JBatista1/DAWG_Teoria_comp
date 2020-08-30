@@ -49,6 +49,7 @@ class NFA: AutomatonProtocol {
     func unionResults(isFinishResult isfinish: Bool ) {
         allResults.append(isfinish)
     }
+
     private func recursiveTransitions(state: State, andSubstring substring: String, withSymbol symbol: Character) {
         if let nextState = state.valueState?[symbol] {
             if nextState.count != 0 {
