@@ -5,9 +5,6 @@
 //  Created by Joao Batista on 24/08/20.
 //  Copyright © 2020 Joao Batista. All rights reserved.
 //
-
-
-
 protocol AutomatonProtocol {
     var alphabet: Set<Character?> {get set}
     var states: Set<State> {get set}
@@ -40,7 +37,7 @@ extension AutomatonProtocol {
             print("Erro no programa. Simbolo não está de acordo com o Alfabeto")
             return nil
         }
-        if !alphabet.contains(symbol)  {
+        if !alphabet.contains(symbol) {
             print("Erro no programa. Simbolo não está de acordo com o Alfabeto")
             return nil
         }

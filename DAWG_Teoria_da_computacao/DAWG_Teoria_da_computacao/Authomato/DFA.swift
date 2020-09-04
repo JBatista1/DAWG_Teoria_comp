@@ -9,6 +9,7 @@
 import Foundation
 
 class DFA: AutomatonProtocol {
+
     //Variaveis globais Necessarias para o automato
     var alphabet: Set<Character?>
     var states: Set<State>
@@ -25,7 +26,7 @@ class DFA: AutomatonProtocol {
         transition(withState: initialState, andString: string)
         if isAccepted {
             return true
-        }else {
+        } else {
             return false
         }
     }
