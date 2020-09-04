@@ -10,7 +10,6 @@ import Foundation
 
 class DFA: AutomatonProtocol {
 
-    //Variaveis globais Necessarias para o automato
     var alphabet: Set<Character?>
     var states: Set<State>
     var initialState: State!
