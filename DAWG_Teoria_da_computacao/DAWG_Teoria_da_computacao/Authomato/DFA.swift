@@ -22,12 +22,11 @@ class DFA: AutomatonProtocol {
         self.states = states
         setupInitialAndFinalState(withStates: states)
     }
-    
     func valid(theString string: String) -> Bool {
         transition(withState: initialState, andString: string)
         if isAccepted {
             return true
-        }else {
+        } else {
             return false
         }
     }

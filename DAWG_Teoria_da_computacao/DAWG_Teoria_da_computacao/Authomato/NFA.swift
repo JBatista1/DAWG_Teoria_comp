@@ -11,11 +11,8 @@ import Foundation
 class NFA: AutomatonProtocol {
 
     var alphabet: Set<Character?> = []
-
     var states: Set<State>
-
     var initialState: State!
-
     var finalState: [State]!
     var allResults: [Bool] = []
     required init(alphabet: Set<Character?>, states: Set<State>) {
@@ -37,7 +34,7 @@ class NFA: AutomatonProtocol {
             if state.isFinish {
                 unionResults(isFinishResult: true)
             }
-        }else {
+        } else {
             let substring = String(string.dropFirst())
             if let symbol = getSymbol(theString: string) {
                 recursiveTransitions(state: state, andSubstring: substring, withSymbol: symbol)
@@ -77,4 +74,3 @@ class NFA: AutomatonProtocol {
     }
 
 }
-

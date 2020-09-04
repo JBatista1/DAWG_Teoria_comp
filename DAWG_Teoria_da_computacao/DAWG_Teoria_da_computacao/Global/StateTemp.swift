@@ -13,12 +13,10 @@ class StateTemp {
     let values: [StateValue]
     let isInitial: Bool
     let isFinish: Bool
-    
     init(nameState: [State], value: [StateValue], isInitial: Bool, isFinish: Bool) {
         self.nameState = nameState
         self.values = value
         self.isFinish = isFinish
         self.isInitial = isInitial
     }
-    
 }
