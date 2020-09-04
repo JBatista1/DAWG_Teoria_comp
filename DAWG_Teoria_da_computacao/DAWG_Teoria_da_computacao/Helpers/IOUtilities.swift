@@ -20,4 +20,6 @@ class IOUtilities {
     static func output(theText text: String) {
         print(text)
     }
+    static func readFile() {
+    }
 }
