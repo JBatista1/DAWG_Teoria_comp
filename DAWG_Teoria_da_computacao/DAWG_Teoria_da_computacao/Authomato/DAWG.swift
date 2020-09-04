@@ -6,4 +6,7 @@
 //  Copyright © 2020 Joao Batista. All rights reserved.
 //
 
-import Foundation
+class DAWG {
+    init(){}
+
+}
