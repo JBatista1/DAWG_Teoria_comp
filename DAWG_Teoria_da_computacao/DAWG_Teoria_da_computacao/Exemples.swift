@@ -25,7 +25,7 @@ class Exemples {
         if authomato.valid(theString: string) {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) é aceita pelo automato")
-            print("#####################################")
+            print("#####################################\n")
         } else {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) não é aceita pelo automato")
@@ -66,7 +66,7 @@ class Exemples {
         if authomato.valid(theString: string) {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) é aceita pelo automato")
-            print("#####################################")
+            print("#####################################\n")
         } else {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) não é aceita pelo automato")
@@ -92,7 +92,7 @@ class Exemples {
         if authomato.valid(theString: string) {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) é aceita pelo automato")
-            print("#####################################")
+            print("#####################################\n")
         } else {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) não é aceita pelo automato")
@@ -115,14 +115,16 @@ class Exemples {
         let conversion = Convert(nfa: authomato)
         let authomatoDFA = conversion.createDFA()
         let string = "00011"
+        print("########### - INICIANDO - ########### ")
         if authomatoDFA.valid(theString: string) {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) é aceita pelo automato")
-            print("#####################################")
+            print("#####################################\n")
         } else {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) não é aceita pelo automato")
             print("#####################################\n")
+
         }
     }
 
@@ -133,10 +135,10 @@ class Exemples {
         let q2 = State()
         let q3 = State()
 
-        q0.setupConfig(isFinish: false, isInitial: true, valueState:  ["a": [q0,q1], "b": [q0]], andName: "q0")
+        q0.setupConfig(isFinish: false, isInitial: true, valueState: ["a": [q0,q1], "b": [q0]], andName: "q0")
         q1.setupConfig(isFinish: false, isInitial: false, valueState: ["a": [q2], "b": []], andName: "q1")
         q2.setupConfig(isFinish: false, isInitial: false, valueState: ["a": [q3], "b": []], andName: "q2")
-        q3.setupConfig(isFinish: true, isInitial: false, valueState:  ["a": [], "b": []], andName: "q3")
+        q3.setupConfig(isFinish: true, isInitial: false, valueState: ["a": [], "b": []], andName: "q3")
 
         let alphabet: Set<Character?> = ["a", "b"]
         let states: Set<State> = [q0, q1, q2, q3, q3]
@@ -144,10 +146,11 @@ class Exemples {
         let conversion = Convert(nfa: authomato)
         let authomatoDFA = conversion.createDFA()
         let string = "abbaababababababababababababababbaaa"
+        print("########### - INICIANDO - ########### ")
         if authomatoDFA.valid(theString: string) {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) é aceita pelo automato")
-            print("#####################################")
+            print("#####################################\n")
         } else {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) não é aceita pelo automato")
@@ -188,14 +191,21 @@ class Exemples {
         let conversion = Convert(nfa: authomato)
         let authomatoDFA = conversion.createDFA()
         let string = "0011100"
+        print("########### - INICIANDO - ########### ")
         if authomatoDFA.valid(theString: string) {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) é aceita pelo automato")
-            print("#####################################")
+            print("#####################################\n")
         } else {
             print("########### - Resultado - ########### ")
             print("A sua String \(string) não é aceita pelo automato")
             print("#####################################\n")
         }
+    }
+    static func createDAWG() {
+        let fileTxt = File.readFile(withName: "waltz", andFileType: "txt")
+        let set = File.getSPlusSMinus(fromFileString: fileTxt)
+        let dawg = DAWG(sPlus: set.sPlus, sMinus: set.sMinus)
+        dawg.testePSPlus()
     }
 }
