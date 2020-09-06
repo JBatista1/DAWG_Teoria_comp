@@ -208,4 +208,10 @@ class Exemples {
         let dawg = DAWG(sPlus: set.sPlus, sMinus: set.sMinus)
         dawg.testePSPlus()
     }
+    static func testeDAWG() {
+        let sPlus: Set<String> = ["aba", "baa", "b"]
+        let sMinus: Set<String> = ["a", "bab","aaa"]
+        let dawg = DAWG(sPlus: sPlus, sMinus: sMinus)
+        dawg.testePSPlus()
+    }
 }

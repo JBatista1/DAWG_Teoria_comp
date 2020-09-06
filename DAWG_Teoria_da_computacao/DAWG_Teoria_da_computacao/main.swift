@@ -20,3 +20,4 @@ import Foundation
 //Exemples.convertWithEpsilonTransition()
 
 Exemples.createDAWG()
+//Exemples.testeDAWG()

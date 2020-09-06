@@ -60,7 +60,7 @@ class File {
         var sMinus = strings.filter { self.isSPlus(theString: $0) == false}
 
         // Remove strings desnecessarias
-        sPlus = sPlus.map { $0.replacingOccurrences(of: "\t", with: "0")}.map { $0.replacingOccurrences(of: "+", with: "")}.filter {$0 != ""}
+        sPlus = sPlus.map { $0.replacingOccurrences(of: "\t", with: "")}.map { $0.replacingOccurrences(of: "+", with: "")}.filter {$0 != ""}
         sMinus = sMinus.map { $0.replacingOccurrences(of: "\t", with: "0")}.filter {$0 != ""}
         result.sPlus = Set(sPlus)
         result.sMinus = Set(sMinus)
