@@ -175,14 +175,14 @@ class Exemples {
         q0.setupConfig(isFinish: false, isInitial: true, valueState:  ["0": [q1], "1": [], epsilon: []], andName: "q0")
         q1.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q2]], andName: "q1")
         q2.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [q3], "1": [], epsilon: []], andName: "q2")
-        q3.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q4,q10]], andName: "q3")
-        q4.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q5,q7]], andName: "q4")
+        q3.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q4, q10]], andName: "q3")
+        q4.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q5, q7]], andName: "q4")
         q5.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [q6], "1": [], epsilon: []], andName: "q5")
         q6.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q9]], andName: "q6")
         q7.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [q8], epsilon: []], andName: "q7")
         q8.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q9]], andName: "q8")
         q9.setupConfig(isFinish: false, isInitial: false, valueState: ["0": [], "1": [], epsilon: [q10, q4]], andName: "q9")
-        q10.setupConfig(isFinish: true, isInitial: false, valueState: ["0":[], "1": [], epsilon: []], andName: "q10")
+        q10.setupConfig(isFinish: true, isInitial: false, valueState: ["0": [], "1": [], epsilon: []], andName: "q10")
 
         let alphabet: Set<Character?> = ["0", "1"]
         let states: Set<State> = [q0, q1, q2, q3, q3, q4, q5, q6, q7, q8, q9, q10]
@@ -206,12 +206,20 @@ class Exemples {
         let fileTxt = File.readFile(withName: "waltz", andFileType: "txt")
         let set = File.getSPlusSMinus(fromFileString: fileTxt)
         let dawg = DAWG(sPlus: set.sPlus, sMinus: set.sMinus)
-        dawg.testePSPlus()
+        let nfa = dawg.getGSPlus()
+        if nfa.valid(theString: "HGWLIM") {
+            print("STRING VALIDA")
+        }
     }
     static func testeDAWG() {
         let sPlus: Set<String> = ["aba", "baa", "b"]
-        let sMinus: Set<String> = ["a", "bab","aaa"]
+        let sMinus: Set<String> = ["a", "bab", "aaa"]
         let dawg = DAWG(sPlus: sPlus, sMinus: sMinus)
-        dawg.testePSPlus()
+        let nfa = dawg.getGSPlus()
+        if nfa.valid(theString: "baa") {
+            print("STRING VALIDA")
+        }
+
+
     }
 }

@@ -22,6 +22,8 @@ class State {
         self.name = name
     }
 }
+// Precisa criar uma comparação customizada para poder realizar as comparações, que usam  Hashable. Como a função: Set.contains"
+
 extension State: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(ObjectIdentifier(self).hashValue)
