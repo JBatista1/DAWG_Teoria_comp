@@ -6,6 +6,7 @@
 //  Copyright © 2020 Joao Batista. All rights reserved.
 //
 
+typealias Potency = [String: Int]
 class DAWG {
     // MARK: - Variables Global
     private var sPlus: Set<String>
@@ -15,7 +16,8 @@ class DAWG {
     private var setV: Set<[String: Set<String>]>!
     private var states: [State] = []
     private var gSPlus: NFA!
-    
+    private var potencyStates: Potency = [:]
+    private var visitedPotencialStates: Potency = [:]
     init(sPlus: Set<String>, sMinus: Set<String>) {
         self.sPlus = sPlus
         self.sMinus = sMinus
@@ -29,10 +31,14 @@ class DAWG {
         let nextRoute = createDicNextRoute(usingSet: setV)
         createStatesAuthomato(withArrayStates: arrayStates, theSetDic: setV, theDicChar: nextRoute)
         gSPlus = NFA(alphabet: alphabet, states: convertArrayInSet(usingArray: states))
+        orderPotency(usignNFA: gSPlus)
         return gSPlus
     }
-    
     // MARK: - Create values
+    private func extend(theAuthomato gSPlus: NFA, andSMinus sMinus: Set<String>){
+        
+    }
+
     private func createPSPlus(withSet set: Set<String>) -> Set<String> {
         var setPrefix: Set<String> = [String(Character.epsilon)]
         for string in set {
@@ -40,6 +46,7 @@ class DAWG {
         }
         return setPrefix
     }
+
     private func createSetV(withPSPlus pSPlus: Set<String>, andSPlus sPlus: Set<String>) -> Set<[String: Set<String>]> {
         var result: Set<[String: Set<String>]> = []
         result.insert([String(Character.epsilon): sPlus])
@@ -92,7 +99,6 @@ class DAWG {
             }
             index += 1
         }
-        print(states)
     }
     
     // MARK: - Validations
@@ -201,6 +207,7 @@ class DAWG {
         }
         return result
     }
+
     // MARK: - Auxiliary Functions
     private func removeEpsilon(inArray array: [Set<String>]) -> [Set<String>] {
         var result: [Set<String>] = []
@@ -225,5 +232,69 @@ class DAWG {
             resul.insert(element)
         }
         return resul
+    }
+    private func orderPotency(usignNFA authomato: NFA) -> [State] {
+        var result: [State] = []
+        let finalstate = getFinalState(inStates: authomato.states)
+
+        for element in authomato.states {
+            for char in alphabet {
+                if let states = element.valueState?[char] {
+                    for state in states where state == finalstate{
+                        potencyStates[element.name] = 1
+                    }
+                }
+
+            }
+        }
+
+        recursiveOrderPotency(usignNFA: authomato, finalCalculed: potencyStates)
+        print(potencyStates)
+        return result
+    }
+    private func recursiveOrderPotency(usignNFA authomato: NFA, finalCalculed: Potency ) {
+        var potency = 0
+        var existVertice = false
+        if finalCalculed.count == 0 {
+            return
+        }
+        for final in finalCalculed {
+            for element in authomato.states {
+                for char in alphabet {
+                    if let states = element.valueState?[char] {
+                        for state in states where state.name == final.key {
+                            potency += 1
+                            existVertice = true
+                        }
+                    }
+                }
+                if existVertice {
+                    potencyStates[element.name] = potency
+                }
+                existVertice = false
+                potency = 0
+            }
+        }
+        print(finalCalculed)
+        recursiveOrderPotency(usignNFA: authomato, finalCalculed: remove(lastFinalPotency: updateVisitedState(withPotency: finalCalculed), theNewFinal: potencyStates))
+
+    }
+    private func getFinalState(inStates states: Set<State>) -> State {
+        let finalState = states.filter { $0.isFinish == true }
+        // Só funciona pois existe somente 1 estado final
+        return finalState.first!
+    }
+    private func remove(lastFinalPotency lastfinal: Potency, theNewFinal newFinal: Potency) -> Potency {
+        var final = newFinal
+        for element in lastfinal {
+            final.removeValue(forKey: element.key)
+        }
+        return final
+    }
+    private func updateVisitedState(withPotency final: Potency) -> Potency {
+        for elemente in final {
+            visitedPotencialStates[elemente.key] = elemente.value
+        }
+        return visitedPotencialStates
     }
 }
