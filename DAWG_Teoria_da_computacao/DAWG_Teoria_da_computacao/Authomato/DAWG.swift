@@ -20,17 +20,6 @@ class DAWG {
         self.sPlus = sPlus
         self.sMinus = sMinus
     }
-    //    func testePSPlus() {
-    //        alphabet = getAlphabet(inSet: sPlus.union(sMinus))
-    //        pSPlus = createPSPlus(withSet: sPlus)
-    //        setV = createSetV(withPSPlus: pSPlus, andSPlus: sPlus)
-    //        let arrayStates = getStates(usingTheSet: setV)
-    //        states = createStatesGeneric(withSize: arrayStates.count)
-    //        let nextRoute = createDicNextRoute(usingSet: setV)
-    //
-    //        createStatesAuthomato(withArrayStates: arrayStates, theSetDic: setV, theDicChar: nextRoute)
-    //
-    //    }
     func getGSPlus() -> NFA {
         alphabet = getAlphabet(inSet: sPlus.union(sMinus))
         pSPlus = createPSPlus(withSet: sPlus)
@@ -160,11 +149,18 @@ class DAWG {
         for element in set {
             for value in element {
                 if !states.contains(value.value) {
-                    states.append(value.value)
+                    if value.value == sPlus {
+                        states.append(value.value)
+                    } else {
+                        for elementSet in value.value {
+                            states.append([elementSet])
+                        }
+                    }
                 }
+
             }
         }
-        return removeEpsilon(inArray: states)
+        return removeEpsilon(inArray: states.uniques)
     }
     
     private func getValuesAcceptedByState(withSet set: Set<String>) -> Set<Character> {
@@ -205,7 +201,7 @@ class DAWG {
         }
         return result
     }
-    //MARK: - Auxiliary Functions
+    // MARK: - Auxiliary Functions
     private func removeEpsilon(inArray array: [Set<String>]) -> [Set<String>] {
         var result: [Set<String>] = []
         for element in array {

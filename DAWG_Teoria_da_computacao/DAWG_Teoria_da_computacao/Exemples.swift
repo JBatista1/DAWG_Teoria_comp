@@ -209,6 +209,8 @@ class Exemples {
         let nfa = dawg.getGSPlus()
         if nfa.valid(theString: "HGWLIM") {
             print("STRING VALIDA")
+        } else {
+            print("STRING Invalida")
         }
     }
     static func testeDAWG() {
@@ -218,6 +220,8 @@ class Exemples {
         let nfa = dawg.getGSPlus()
         if nfa.valid(theString: "baa") {
             print("STRING VALIDA")
+        }else {
+            print("STRING Invalida")
         }
 
 
