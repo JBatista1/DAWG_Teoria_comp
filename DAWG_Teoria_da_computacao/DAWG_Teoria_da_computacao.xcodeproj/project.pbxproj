@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		87195F1F80A2A0A3A14997B5 /* Pods_DAWG_Teoria_da_computacao.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */; };
 		9A503D1D24F48E63006F8E0B /* AutomatonProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */; };
+		9A896C642502CEA900F9BDA3 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A896C632502CEA900F9BDA3 /* File.swift */; };
 		9A8A15EF24FAB4840083F7D5 /* StateTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A15EE24FAB4840083F7D5 /* StateTemp.swift */; };
 		9A8A15F124FAD3340083F7D5 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A15F024FAD3340083F7D5 /* ArrayExtension.swift */; };
 		9A8A15F324FAEC710083F7D5 /* DAWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A15F224FAEC710083F7D5 /* DAWG.swift */; };
@@ -17,6 +18,7 @@
 		9AA53ED924F6ADBE00C5D941 /* Exemples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53ED824F6ADBE00C5D941 /* Exemples.swift */; };
 		9AA53EDC24F6B2A100C5D941 /* CharExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */; };
 		9AA865A924F5B28400885A2D /* NFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA865A824F5B28400885A2D /* NFA.swift */; };
+		9AB9BDE325030C47009067EE /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AB9BDE225030C47009067EE /* String+Extension.swift */; };
 		9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F324EFD3C200640D11 /* DFA.swift */; };
 		9AC8C1F724EFD3C300640D11 /* IOUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */; };
 		9AC8C1F924EFD3E100640D11 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8C1F824EFD3E100640D11 /* main.swift */; };
@@ -39,8 +41,7 @@
 		46F4E9C5288F5A4B97344DAB /* Pods-DAWG_Teoria_da_computacao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DAWG_Teoria_da_computacao.debug.xcconfig"; path = "Target Support Files/Pods-DAWG_Teoria_da_computacao/Pods-DAWG_Teoria_da_computacao.debug.xcconfig"; sourceTree = "<group>"; };
 		678F412112890FBBB671B271 /* Pods_DAWG_Teoria_da_computacao.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DAWG_Teoria_da_computacao.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomatonProtocol.swift; sourceTree = "<group>"; };
-		9A896C612502BF9500F9BDA3 /* waltz.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waltz.txt; sourceTree = "<group>"; };
-		9A896C622502BF9500F9BDA3 /* waltzdb.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waltzdb.csv; sourceTree = "<group>"; };
+		9A896C632502CEA900F9BDA3 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		9A8A15EE24FAB4840083F7D5 /* StateTemp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTemp.swift; sourceTree = "<group>"; };
 		9A8A15F024FAD3340083F7D5 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		9A8A15F224FAEC710083F7D5 /* DAWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAWG.swift; sourceTree = "<group>"; };
@@ -48,7 +49,11 @@
 		9A97A51424F4854C005630D3 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		9AA53ED824F6ADBE00C5D941 /* Exemples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exemples.swift; sourceTree = "<group>"; };
 		9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharExtension.swift; sourceTree = "<group>"; };
+		9AA6E5C52502DB5D00D74FE6 /* JBCard.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JBCard.plist; sourceTree = "<group>"; };
+		9AA6E5C92502DB8F00D74FE6 /* waltz.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waltz.txt; sourceTree = "<group>"; };
+		9AA6E5CA2502DB8F00D74FE6 /* waltzdb.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = waltzdb.csv; sourceTree = "<group>"; };
 		9AA865A824F5B28400885A2D /* NFA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFA.swift; sourceTree = "<group>"; };
+		9AB9BDE225030C47009067EE /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		9AC8C1E824EFD39D00640D11 /* DAWG_Teoria_da_computacao */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DAWG_Teoria_da_computacao; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AC8C1F324EFD3C200640D11 /* DFA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DFA.swift; sourceTree = "<group>"; };
 		9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOUtilities.swift; sourceTree = "<group>"; };
@@ -75,24 +80,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9A896C602502BF6800F9BDA3 /* Resource */ = {
+		9A1645ED2502EA620045AD71 /* Uteis */ = {
 			isa = PBXGroup;
 			children = (
-				9A896C612502BF9500F9BDA3 /* waltz.txt */,
-				9A896C622502BF9500F9BDA3 /* waltzdb.csv */,
+				9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */,
+				9A896C632502CEA900F9BDA3 /* File.swift */,
 			);
-			path = Resource;
+			path = Uteis;
 			sourceTree = "<group>";
 		};
-		9A97A51124F48236005630D3 /* Global */ = {
+		9A97A51124F48236005630D3 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
 				9A503D1C24F48E63006F8E0B /* AutomatonProtocol.swift */,
-				9A97A51424F4854C005630D3 /* State.swift */,
-				9AA53ED824F6ADBE00C5D941 /* Exemples.swift */,
-				9A8A15EE24FAB4840083F7D5 /* StateTemp.swift */,
 			);
-			path = Global;
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		9AA53EDA24F6B29500C5D941 /* Extension */ = {
@@ -100,8 +102,27 @@
 			children = (
 				9AA53EDB24F6B2A100C5D941 /* CharExtension.swift */,
 				9A8A15F024FAD3340083F7D5 /* ArrayExtension.swift */,
+				9AB9BDE225030C47009067EE /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		9AA6E5C82502DB7400D74FE6 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				9AA6E5C92502DB8F00D74FE6 /* waltz.txt */,
+				9AA6E5CA2502DB8F00D74FE6 /* waltzdb.csv */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		9AA6E5CB2502E8E800D74FE6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9A97A51424F4854C005630D3 /* State.swift */,
+				9A8A15EE24FAB4840083F7D5 /* StateTemp.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9AC8C1DF24EFD39D00640D11 = {
@@ -125,9 +146,12 @@
 		9AC8C1EA24EFD39D00640D11 /* DAWG_Teoria_da_computacao */ = {
 			isa = PBXGroup;
 			children = (
-				9A896C602502BF6800F9BDA3 /* Resource */,
-				9A97A51124F48236005630D3 /* Global */,
+				9AA6E5C52502DB5D00D74FE6 /* JBCard.plist */,
 				9AC8C1F824EFD3E100640D11 /* main.swift */,
+				9AA53ED824F6ADBE00C5D941 /* Exemples.swift */,
+				9AA6E5CB2502E8E800D74FE6 /* Models */,
+				9AA6E5C82502DB7400D74FE6 /* Resource */,
+				9A97A51124F48236005630D3 /* Protocol */,
 				9AC8C1F224EFD3C200640D11 /* Authomato */,
 				9AC8C1F424EFD3C300640D11 /* Helpers */,
 			);
@@ -148,8 +172,8 @@
 		9AC8C1F424EFD3C300640D11 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9A1645ED2502EA620045AD71 /* Uteis */,
 				9AA53EDA24F6B29500C5D941 /* Extension */,
-				9AC8C1F524EFD3C300640D11 /* IOUtilities.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -192,7 +216,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1160;
-				LastUpgradeCheck = 1160;
+				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "Joao Batista";
 				TargetAttributes = {
 					9AC8C1E724EFD39D00640D11 = {
@@ -274,6 +298,8 @@
 				9AA53EDC24F6B2A100C5D941 /* CharExtension.swift in Sources */,
 				9AC8C1F624EFD3C300640D11 /* DFA.swift in Sources */,
 				9A503D1D24F48E63006F8E0B /* AutomatonProtocol.swift in Sources */,
+				9AB9BDE325030C47009067EE /* String+Extension.swift in Sources */,
+				9A896C642502CEA900F9BDA3 /* File.swift in Sources */,
 				9AA53ED924F6ADBE00C5D941 /* Exemples.swift in Sources */,
 				9A97A51524F4854C005630D3 /* State.swift in Sources */,
 				9AC8C1F924EFD3E100640D11 /* main.swift in Sources */,
@@ -401,6 +427,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 46F4E9C5288F5A4B97344DAB /* Pods-DAWG_Teoria_da_computacao.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DAWG_Teoria_da_computacao/DAWG_Teoria_da_computacao.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XYJN7S9JQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -413,6 +441,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E73169B35F5764678E7920F /* Pods-DAWG_Teoria_da_computacao.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DAWG_Teoria_da_computacao/DAWG_Teoria_da_computacao.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6XYJN7S9JQ;
 				ENABLE_HARDENED_RUNTIME = YES;
